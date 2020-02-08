@@ -1,12 +1,18 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const botCommands = require('./commands')
+const populateMsgoList = require('./populateMsgoList');
 bot.commands = new Discord.Collection();
 
 require('dotenv').config();
 
 const bot_token = process.env.BOT_TOKEN;
 const prefix = process.env.PREFIX;
+
+global.msgoDict = {};
+global.trueNames = {};
+
+populateMsgoList();
 
 Object.keys(botCommands).map(key => {
     bot.commands.set(botCommands[key].name, botCommands[key]);
