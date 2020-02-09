@@ -9,7 +9,7 @@ require('dotenv').config();
 const bot_token = process.env.BOT_TOKEN;
 const prefix = process.env.PREFIX;
 
-global.msgoDict = {};
+global.msgoList = [];
 global.trueNames = {};
 
 populateMsgoList();
