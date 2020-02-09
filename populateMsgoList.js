@@ -1,4 +1,4 @@
-const url = require('url');
+var URL = require('url').URL;
 
 const axios = require('axios');
 const cheerio = require('cheerio');
