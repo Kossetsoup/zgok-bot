@@ -29,6 +29,7 @@ const findGundam = () => {
         if (urlStr) {
             urlObj = new URL(urlStr);
             urlStr = decodeURI(urlObj.searchParams.get('q'));
+            urlStr = urlStr.replace(' ', '%20');
     
             console.log(urlStr);
         
