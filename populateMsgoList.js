@@ -20,7 +20,7 @@ const fetchRebel = async () => {
     return cheerio.load(result.data);
 };
 
-const findGundam = () => {    
+const findGundam = () => {
     $(gundamSelector).each((index, element) => {
         let name = $('.zfr3Q', element).text();
         let urlStr = $('a', element).attr('href');
@@ -30,10 +30,10 @@ const findGundam = () => {
             urlObj = new URL(urlStr);
             urlStr = decodeURI(urlObj.searchParams.get('q'));
             urlStr = urlStr.replace(' ', '%20');
-    
+
             console.log(urlStr);
-        
-            global.msgoList.push({key: key, url: urlStr});
+
+            global.msgoList.push({ key: key, url: urlStr });
 
             name = name.replace(/(\w)([([])/g, "$1 $2");
             name = name.replace(/([0-9])(?!(st)|(nd)|(rd)|(th)|[0-9]|\s)/g, "$1 $2");
@@ -47,7 +47,7 @@ const findGundam = () => {
     });
 }
 
-module.exports = async function(){
+module.exports = async function () {
     $ = await fetchOrder();
     findGundam();
     $ = await fetchRebel();

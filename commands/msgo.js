@@ -1,6 +1,6 @@
 module.exports = {
     name: 'msgo',
-    description: 'Send URL of Gundam to .',
+    description: 'Send URL of Gundam to chat.',
     execute(msg, args) {
         let name = args.join('');
         name = name.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
@@ -16,7 +16,7 @@ module.exports = {
         if (matches.length === 1) {
             let foundKey = matches[0].key;
             let url = matches[0].url;
-            let trueName = global.trueNames[foundKey];            
+            let trueName = global.trueNames[foundKey];
 
             msg.reply(`here's your ${trueName}, boss: ${url}`);
         } else if (matches.length >= 10) {
