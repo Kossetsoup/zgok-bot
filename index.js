@@ -23,6 +23,10 @@ bot.on('ready', () => {
 });
 
 bot.on('message', msg => {
+    if (msg.content.includes('<:bright:654287453653565450>')) {
+        msg.channel.send('<:aggresiveburgereating:697054011827814430>');
+    }
+
     if (msg.author.bot) {
         return;
     }
