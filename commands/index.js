@@ -3,4 +3,5 @@ module.exports = {
     msgo: require('./msgo'),
     refresh: require('./refresh'),
     oursite: require('./oursite'),
+    mago: require('./mago'),
 };
